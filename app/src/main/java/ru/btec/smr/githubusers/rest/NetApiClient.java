@@ -31,8 +31,8 @@ public class NetApiClient {
                 .subscribeOn(Schedulers.io());
     }
 
-    public Flowable<List<GithubUser>> getUsers() {
-        return netApi.getUsers(100)
+    public Flowable<List<GithubUser>> getUsers(long since, int per_page) {
+        return netApi.getUsers(since, per_page)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
     }

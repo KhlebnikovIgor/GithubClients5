@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity implements OnGithubuserListI
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         fm = getSupportFragmentManager();
         listFragment = new GithubUserListFragment();
 

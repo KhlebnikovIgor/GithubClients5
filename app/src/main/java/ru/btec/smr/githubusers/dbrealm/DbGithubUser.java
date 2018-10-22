@@ -1,4 +1,4 @@
-package ru.btec.smr.githubusers.model;
+package ru.btec.smr.githubusers.dbrealm;
 
 
 import android.support.annotation.Nullable;
@@ -9,7 +9,7 @@ import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
 
-public class GithubUser  {
+public class DbGithubUser extends RealmObject {
     @PrimaryKey
     private long id;
     private String login;
@@ -17,7 +17,7 @@ public class GithubUser  {
     private String avatar;
 
 
-    public GithubUser() {
+    public DbGithubUser() {
     }
 
     @Nullable

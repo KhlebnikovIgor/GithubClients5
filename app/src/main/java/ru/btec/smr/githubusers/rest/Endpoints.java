@@ -19,8 +19,12 @@ public interface Endpoints {
     Observable<GithubUser> getUser(
             @Path("user") String user);
 
-    @GET("/users?per_page=50")
-    Flowable<List<GithubUser>> getUsers(@Query("since") int since);
+    @GET("/users")
+    Flowable<List<GithubUser>> getUsers(@Query("since") long since, @Query("per_page") int per_page);
+
+    @GET("/search/users")
+    Flowable<List<GithubUser>> getSearchUsers(@Query("q") String login, @Query("page") int page);
+//    https://api.github.com/search/users?q=tom&page=34
 
     @GET("/repositories")
     Flowable<List<RepsModel>> getRepos();

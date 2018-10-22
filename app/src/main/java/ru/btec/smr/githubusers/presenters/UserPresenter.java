@@ -3,6 +3,7 @@ package ru.btec.smr.githubusers.presenters;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
+
 import ru.btec.smr.githubusers.model.GithubUser;
 import ru.btec.smr.githubusers.rest.NetApiClient;
 
