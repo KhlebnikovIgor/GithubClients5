@@ -20,9 +20,9 @@ public class MainActivity extends AppCompatActivity implements OnGithubuserListI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         fm = getSupportFragmentManager();
         listFragment = new GithubUserListFragment();
+
 
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             fm.beginTransaction().replace(R.id.container, listFragment).commit();
@@ -45,6 +45,6 @@ public class MainActivity extends AppCompatActivity implements OnGithubuserListI
 
     @Override
     public void refreshList() {
-        listFragment.refreshList();
+//        listFragment.refreshList();
     }
 }

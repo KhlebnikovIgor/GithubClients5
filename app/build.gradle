@@ -70,4 +70,6 @@ dependencies {
     //Architecture Components
     implementation "android.arch.lifecycle:extensions:1.1.1"
 
+    implementation 'io.realm:android-adapters:2.1.0'
+
 }

@@ -10,8 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import ru.btec.smr.githubusers.R;
+import ru.btec.smr.githubusers.dbrealm.DbGithubUser;
 import ru.btec.smr.githubusers.interfaces.OnGithubuserListItemSelectedListener;
-import ru.btec.smr.githubusers.model.GithubUser;
 
 class GithubUserHolder extends RecyclerView.ViewHolder {
     private OnGithubuserListItemSelectedListener callbackActivity;
@@ -27,11 +27,12 @@ class GithubUserHolder extends RecyclerView.ViewHolder {
         listItemCardView = (CardView) itemView.findViewById(R.id.list_item_card_view);
     }
 
-    void bind(GithubUser item) {
+    void bind(DbGithubUser item) {
         titleTextView.setText(Html.fromHtml("<font color=#639EFD>Id: </font>" + item.getId() + "<br><font color=#639EFD>Login: </font>" + item.getLogin()));
         Glide.with(listItemCardView.getContext())
                 .load(item.getAvatar())
                 .into(imageView);
+
         listItemCardView.setOnClickListener((v)->callbackActivity.onWorkoutListItemSelected(getAdapterPosition()));
     }
 
@@ -40,4 +41,6 @@ class GithubUserHolder extends RecyclerView.ViewHolder {
         View view = layoutInflater.inflate(R.layout.githubuser_list_item, parent, false);
         return new GithubUserHolder(view);
     }
+
+
 }

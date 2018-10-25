@@ -13,14 +13,15 @@ import android.widget.TextView;
 import ru.btec.smr.githubusers.R;
 import ru.btec.smr.githubusers.interfaces.OnGithubuserListItemSelectedListener;
 
-public class GithubuserReposDetailFragment extends Fragment {
-    OnGithubuserListItemSelectedListener callbackActivity;
+public class GithubuserReposDetailFragment extends Fragment  implements OnGithubuserListItemSelectedListener {
+    //OnGithubuserListItemSelectedListener callbackActivity;
     private TextView repos_name;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        callbackActivity = (OnGithubuserListItemSelectedListener) context;
+
+        //callbackActivity = (OnGithubuserListItemSelectedListener) context;
     }
 
     @Override
@@ -47,6 +48,16 @@ public class GithubuserReposDetailFragment extends Fragment {
         repos_name = (TextView) root.findViewById(R.id.repos_name);
         repos_name.setText("Здесь должен быть список репозитариев!!!\nПока не реализованно!!!");
         //callbackActivity.refreshList();
+
+    }
+
+    @Override
+    public void onWorkoutListItemSelected(int position) {
+        repos_name.setText(position);
+    }
+
+    @Override
+    public void refreshList() {
 
     }
 }
